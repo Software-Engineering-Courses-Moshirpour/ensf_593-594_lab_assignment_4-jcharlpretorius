@@ -1,3 +1,4 @@
+package org.example;
 
 public class Text {
     private String text;

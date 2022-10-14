@@ -1,4 +1,4 @@
-
+package org.example;
 //  RandomGenerator.java
 
 import java.util.Random;
