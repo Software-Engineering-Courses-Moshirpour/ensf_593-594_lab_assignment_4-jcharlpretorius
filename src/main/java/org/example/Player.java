@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.Scanner;
-
 /**
  * This class represents a player of the tic-tac-toe game.
  * It contains information about the player's name and mark,
