@@ -1,4 +1,4 @@
-
+package org.example;
 //Game.java
 import java.io.*;
 
@@ -6,7 +6,7 @@ public class Game implements Constants {
 
 	private Board theBoard;
 	private Referee theRef;
-	
+
 	/**
 	 * creates a board for the game
 	 */
@@ -14,20 +14,26 @@ public class Game implements Constants {
         theBoard  = new Board();
 
 	}
-    
+
     /**
      * calls the referee method runTheGame
-     * @param r refers to the appointed referee for the game 
+     * @param r refers to the appointed referee for the game
      * @throws IOException
      */
     public void appointReferee(Referee r) throws IOException {
         theRef = r;
     	theRef.runTheGame();
     }
-    
-	
+
+	/**
+	 * The main method sets up the start of the game.
+	 * Creates and sets the two players, the board and the referee
+	 * @param args
+	 * @throws IOException When getting the user's input,
+	 * the readLine method of BufferedReader can throw this exception
+	 */
 	public static void main(String[] args) throws IOException {
-		
+
 		Referee theRef;
 		Player xPlayer, oPlayer;
 		BufferedReader stdin;
@@ -41,27 +47,27 @@ public class Game implements Constants {
 		}
 
 		xPlayer = create_player (name, LETTER_X, theGame.theBoard, stdin);
-		
+
 		System.out.print("\nPlease enter the name of the \'O\' player: ");
 		name = stdin.readLine();
 		while (name == null) {
 			System.out.print("Please try again: ");
 			name = stdin.readLine();
 		}
-		
+
 		oPlayer = create_player (name, LETTER_O, theGame.theBoard, stdin);
-		
+
 		theRef = new Referee();
 		theRef.setBoard(theGame.theBoard);
 		theRef.setoPlayer(oPlayer);
 		theRef.setxPlayer(xPlayer);
-        
+
         theGame.appointReferee(theRef);
 	}
-	
+
 	/**
-	 * Creates the specified type of player indicated by the user. 
-	 * 
+	 * Creates the specified type of player indicated by the user.
+	 *
 	 * @param name player's name
 	 * @param mark player's mark (X or O)
 	 * @param board refers to the game board
@@ -89,8 +95,8 @@ public class Game implements Constants {
 			input= stdin.readLine();
 			player_type = Integer.parseInt(input);
 		}
-		
-		// Create a specific type of Player 
+
+		// Create a specific type of Player
 		Player result = null;
 		switch(player_type) {
 			case 1:

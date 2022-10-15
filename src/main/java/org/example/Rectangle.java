@@ -1,4 +1,4 @@
-
+package org.example;
 
 public class Rectangle extends Shape {
 	protected Double width, length;

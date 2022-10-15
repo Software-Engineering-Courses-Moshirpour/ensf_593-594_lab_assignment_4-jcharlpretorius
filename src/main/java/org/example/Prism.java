@@ -1,4 +1,4 @@
-
+package org.example;
 
 class Prism extends Rectangle {
 	private Double height;
