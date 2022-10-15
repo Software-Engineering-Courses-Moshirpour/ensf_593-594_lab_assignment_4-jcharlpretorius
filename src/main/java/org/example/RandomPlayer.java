@@ -1,5 +1,11 @@
 package org.example;
 
+/**
+ * This class represents a computer controlled random player of the tic-tac-toe game.
+ * This player makes moves at random.
+ * It contains information about the player's name and mark,
+ * opponent, and the board to play on.
+ */
 public class RandomPlayer extends Player{
 
     protected RandomGenerator randomGenerator;
@@ -8,6 +14,9 @@ public class RandomPlayer extends Player{
         randomGenerator = new RandomGenerator();
     }
 
+    /**
+     * Make a random move on the board.
+     */
     @Override
     protected void makeMove() {
 

@@ -25,7 +25,13 @@ public class Game implements Constants {
     	theRef.runTheGame();
     }
 
-
+	/**
+	 * The main method sets up the start of the game.
+	 * Creates and sets the two players, the board and the referee
+	 * @param args
+	 * @throws IOException When getting the user's input,
+	 * the readLine method of BufferedReader can throw this exception
+	 */
 	public static void main(String[] args) throws IOException {
 
 		Referee theRef;
