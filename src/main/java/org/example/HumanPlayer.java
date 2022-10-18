@@ -18,7 +18,8 @@ public class HumanPlayer extends Player{
     @Override
     protected void makeMove() {
         Scanner scanner = new Scanner(System.in);
-        while(true) {
+        boolean gotValidInput = false;
+        while(!gotValidInput) {
             // get row placement
             System.out.print(name + ", what row should your next " + mark + " be placed in? ");
             int row = Integer.parseInt(scanner.nextLine());
@@ -40,7 +41,7 @@ public class HumanPlayer extends Player{
             }
             // place mark on board and exit the loop
             board.addMark(row, col, mark);
-            break;
+            gotValidInput = true;
         }
     }
 }
